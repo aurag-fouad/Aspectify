@@ -7,7 +7,7 @@ Aspectify is a web application developed to perform **Aspect-Based Sentiment Ana
 
 The application is developed with **Angular** for the frontend and **Flask** for the backend. The frontend is deployed on **Firebase**, and the backend is exposed using **ngrok**.
 
-![Aspectify Screenshot](path-to-your-image-file)
+![Aspectify Screenshot](https://github.com/aurag-fouad/Aspectify/blob/main/assets/1_interface.png)
 
 ## Features
 
