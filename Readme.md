@@ -1,82 +1,70 @@
-# Quick Guide: Running Aspectify Locally
+# Aspectify: Aspect-Based Sentiment Analysis
 
-This document details the process of running our Aspectify application for the first time. Follow these steps to run Aspectify on your local machine:
+Aspectify is a web application developed to perform **Aspect-Based Sentiment Analysis (ABSA)** on two domains: **laptops** and **restaurants**. The project was a part of a thesis that involved fine-tuning large language models (LLMs) for aspect prediction and sentiment classification. The best models obtained were:
 
-## Prerequisites
+- **Mistral-7B** for aspect prediction
+- **LLaMA3-8B** for sentiment classification
 
-The first two steps will focus on Making sure we have the necessary packages, which are:
+The application is developed with **Angular** for the frontend and **Flask** for the backend. The frontend is deployed on **Firebase**, and the backend is exposed using **ngrok**.
 
-- [Node.js](https://nodejs.org/) (version 16 or later is recommended)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- [Angular CLI](https://angular.io/cli)
+![Aspectify Screenshot](path-to-your-image-file)
 
-### Step 1: Install Node.js and npm
+## Features
 
-If Node.js is not already installed, download and install it from the official [Node.js website](https://nodejs.org/). The installation also includes npm (Node Package Manager).
+- Perform Aspect-Based Sentiment Analysis for laptops and restaurants
+- Fine-tuned LLMs for high accuracy in aspect prediction and sentiment classification
+- Easy-to-use interface for uploading data and viewing sentiment results
 
-Verify installation:
+## How to Use
 
-```shell
-node -v
-npm -v
-```
+### 1. Run the Backend
+Before using the application, you need to run the backend. This can be done using Google Colab. If you're using the free tier of Colab, please note that you can only load the LLMs for **one domain at a time**.
 
-### Step 2: Install Angular CLI
+By default, the backend loads the models for the **laptops domain**. To switch to the **restaurants domain**, simply:
 
-To install Angular CLI globally, run the following command in your terminal:
+- **Uncomment** the cells that load the models for **restaurants**
+- **Comment out** the cells that load the models for **laptops**
 
-```shell
-npm install -g @angular/cli@16
-```
+### 2. Access the Frontend
 
-You can verify the installation of Angular CLI by running:
+The frontend can be accessed via the following link:
 
-```shell
-ng version
-```
+[Aspectify Web Application](https://aspectify-f94e3.web.app/)
 
-### Step 3: download the source code
+### 3. Connect the Backend to the Frontend
 
-Download the application files from the shared Google Drive located at `Aspectify/Frontend`. Navigate to the project directory in your terminal. Make sure you are in the `Frontend` file in your terminal.
+1. After running the backend on Google Colab, copy the **ngrok** link.
+2. Make sure you have added your ngrok **auth token** to expose the backend properly.
+3. Paste the ngrok link into the web application to link the backend.
+4. Choose the correct domain (laptops or restaurants) based on the models you've loaded.
 
-### Step 4: Install Dependencies
+### 4. Perform Sentiment Analysis
 
-The `node_modules` folder is excluded from the shared folder. To install the required dependencies, run:
+Once the backend and frontend are connected, you can start performing Aspect-Based Sentiment Analysis by uploading data. Simply click on the correct domain in the UI and analyze the sentiment results for various aspects.
 
-```shell
-npm install
-```
+## Technologies Used
 
-This will install all the necessary packages listed in the `package.json` file.
+- **Frontend**: Angular
+- **Backend**: Flask
+- **Models**: Fine-tuned Mistral-7B and LLaMA3-8B for Aspect-Based Sentiment Analysis
+- **Hosting**: Firebase (frontend), ngrok (backend)
 
-### Step 5: Run the Application
+## Project Structure
 
-Once the dependencies are installed, start the Aspectify development server by running:
-```shell
-ng serve
-```
-This will compile and serve the application on your local machine.
+- **/frontend**: Angular code for the frontend
+- **/backend**: Flask API and model-loading scripts for the backend
+- **/Experiments Notebooks**: To Be Added Soon
 
-### Step 6: Access the Application
+## Important Notes
 
-After running `ng serve`, the terminal will display a message indicating that the application is running at:
-http://localhost:4200/
+- If using the free tier of Google Colab, the models can only be loaded for one domain at a time (laptops or restaurants).
+- Ensure you have set up ngrok properly with your auth token to expose the backend and connect it to the frontend.
 
-Open a browser and navigate to this URL to view the application.
+## Contributing
 
-### Additional Notes
+Feel free to fork this repository and contribute. Pull requests are welcome.
 
-If the port `4200` is already in use, you can run the application on a different port using:
-```shell
-ng serve --port <PORT_NUMBER>
-```
+## License
 
-For example, to run it on port 4300:
-```shell
-ng serve --port 4300
-```
+This project is licensed under the MIT License.
 
-### Step 7: Stop the Application
-To stop the development server, press `Ctrl + C` in the terminal.
-
-# Sincerly, Fouad AURAG.
